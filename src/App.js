@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import About from './components/About';
 import Work from './components/Work';
@@ -12,8 +12,8 @@ function App() {
     <Router>
       <Header />
       <Routes>
-
-        <Route path="/" element={<Navigate replace to="/about" />} />
+        
+        <Route path="/" element={<About />} />
 
         
         <Route path="/about" element={<About />} />
