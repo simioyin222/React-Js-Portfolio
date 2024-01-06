@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Work from './Work';
+import Work from '../components/Work';
 
 test('renders Work component with LinkedIn link', () => {
   render(<Work />);

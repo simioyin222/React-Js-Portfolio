@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 function Projects() {
   const [projects] = useState([
     {
-      name: 'PracticeW1',
+      name: 'DailyLife',
       description: 'HTML and CSS practice project from my first week at Epicodus.',
-      link: 'https://github.com/simioyin222/PracticeW1'
+      link: 'https://github.com/simioyin222/DailyLife'
     },
     {
       name: 'Simi-Portfolio1',

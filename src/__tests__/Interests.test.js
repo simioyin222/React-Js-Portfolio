@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Interests from './Interests';
+import Interests from '../components/Interests';
 
 test('renders Interests component with hobbies list', () => {
   render(<Interests />);

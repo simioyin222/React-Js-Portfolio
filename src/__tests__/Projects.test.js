@@ -1,13 +1,16 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Projects from './Projects';
+import Projects from '../components/Projects';
 
 test('renders Projects component with project links', () => {
   render(<Projects />);
-  const projectOneLink = screen.getByText(/PracticeW1/i).closest('a');
-  expect(projectOneLink).toHaveAttribute('href', 'https://github.com/simioyin222/PracticeW1');
+  
+  // Get all links in the component
+  const links = screen.getAllByRole('link');
+  expect(links.length).toBeGreaterThanOrEqual(2); // Ensure there are at least two links
 
-  const projectTwoLink = screen.getByText(/Simi-Portfolio1/i).closest('a');
-  expect(projectTwoLink).toHaveAttribute('href', 'https://github.com/simioyin222/SIMI-PORTFOLIO1');
+  // Test the href attribute of each link
+  expect(links[0]).toHaveAttribute('href', 'https://github.com/simioyin222/DailyLife');
+  expect(links[1]).toHaveAttribute('href', 'https://github.com/simioyin222/SIMI-PORTFOLIO1');
 });
