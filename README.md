@@ -1,49 +1,60 @@
-# Getting Started with Create React App
+# My Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Author: Simi Oyin
+
+## Project Overview
+This application is a personal portfolio website built using React. It showcases various projects, work experience, interests, and skills. The website is designed to provide a comprehensive view of my professional capabilities and achievements.
+
+## Installation and Setup
+To run this project locally:
+
+1. Clone the repository: `git clone [Your-Repository-URL]`
+2. Navigate to the project directory: `cd my-portfolio`
+3. Install dependencies: `npm install`
+4. Start the application: `npm start`
+5. Open http://localhost:3000 to view it in your browser.
+
+## Usage
+- **View Portfolio:** The home page displays sections like About Me, Work Experience, Projects, and Interests.
+- **Navigate Sections:** Use the navigation links to jump to different sections of the portfolio.
+- **View Details:** Click on project items or work experiences to view more details.
+
+## Redux Integration
+This portfolio doesn't currently use Redux, as the state management requirements are minimal. Future enhancements could include Redux for more complex state management needs.
+
+## Jest Testing
+Components and functionalities in the project are tested using Jest, ensuring reliability and expected behavior across the application.
+
+## Technology Stack
+- React
+- Jest
+- CSS
+- JavaScript
+
+## Contributing
+Contributions are welcome! If you have suggestions or improvements, please fork the repository and submit a pull request.
+
+## License
+MIT License
+
+Copyright (c) 2023 [Your Full Name]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+## Create React App Usage
+This project was bootstrapped with Create React App. For more detailed instructions on using Create React App, visit the [official documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 ## Available Scripts
+In the project directory, you can run several scripts:
 
-In the project directory, you can run:
+- `npm start`: Runs the app in development mode. Open http://localhost:3000 to view it in the browser.
+- `npm test`: Launches the test runner in interactive watch mode.
+- `npm run build`: Builds the app for production to the `build` folder.
+- `npm run eject`: Removes the single build dependency from the project.
 
-### `npm start`
+## Learn More About React
+To learn more about React, check out the [React documentation](https://reactjs.org/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### Code Splitting
 
