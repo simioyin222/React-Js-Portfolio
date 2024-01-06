@@ -3,7 +3,7 @@ import styles from './about.module.css';
 
 function About() {
   return (
-    <div>
+    <div className={styles.aboutSection}>
       <h2>About Me</h2>
       <p>
         My name is <em>Similoluwa Oyinkolade</em>, but people usually call me

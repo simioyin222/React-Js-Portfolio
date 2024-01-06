@@ -3,7 +3,7 @@ import styles from './header.module.css';
 
 function Header() {
   return (
-    <header>
+    <header className={styles.headerStyle}>
       <h1>My Portfolio</h1>
     </header>
   );
