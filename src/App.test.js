@@ -1,8 +1,12 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders all main components in the App', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText(/Similoluwa Oyinkolade/i)).toBeInTheDocument();
+  expect(screen.getByText(/Work Experience\/Background/i)).toBeInTheDocument();
+  expect(screen.getByText(/Projects/i)).toBeInTheDocument();
+  expect(screen.getByText(/Interests and Hobbies/i)).toBeInTheDocument();
 });
