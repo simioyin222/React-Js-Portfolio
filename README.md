@@ -8,7 +8,7 @@ This application is a personal portfolio website built using React. It showcases
 ## Installation and Setup
 To run this project locally:
 
-1. Clone the repository: `git clone [Your-Repository-URL]`
+1. Clone the repository: 'git clone https://github.com/simioyin222/React-Js-Portfolio.git'
 2. Navigate to the project directory: `cd my-portfolio`
 3. Install dependencies: `npm install`
 4. Start the application: `npm start`
