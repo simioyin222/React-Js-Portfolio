@@ -5,6 +5,7 @@ import Work from './components/Work';
 import Projects from './components/Projects';
 import Interests from './components/Interests';
 import ContactForm from './components/ContactForm'; // updated ContactForm
+import Modal from './components/Modal/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'; //  custom styles outside of modules
 
