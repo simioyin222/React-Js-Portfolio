@@ -1,4 +1,9 @@
 :root {
+  --button-background-color-light: #007bff; 
+  --button-background-color-dark: #000080; 
+  --button-hover-background-color-light: #0056b3; 
+  --button-hover-background-color-dark: #000033; 
+
   --background-light: #ffffff; /* White */
   --primary-light: #007bff; /* Royal Blue */
   --text-light: #000000; /* Black text */
@@ -8,16 +13,20 @@
   --text-dark: #ffffff; /* White text */
 }
 
-[data-theme="light"] {
+body[data-theme="light"] {
   --background-color: var(--background-light);
   --primary-color: var(--primary-light);
   --text-color: var(--text-light);
+  --button-background-color: var(--button-background-color-light);
+  --button-hover-background-color: var(--button-hover-background-color-light);
 }
 
-[data-theme="dark"] {
+body[data-theme="dark"] {
   --background-color: var(--background-dark);
   --primary-color: var(--primary-dark);
   --text-color: var(--text-dark);
+  --button-background-color: var(--button-background-color-dark);
+  --button-hover-background-color: var(--button-hover-background-color-dark);
 }
 
 body {

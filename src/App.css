@@ -10,13 +10,13 @@ input, textarea {
 button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--button-background-color); /* Use variable */
+  color: white; /* Adjust based on your theme or keep it constant */
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: var(--button-hover-background-color); /* Use variable */
 }
