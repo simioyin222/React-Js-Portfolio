@@ -4,17 +4,17 @@
   --button-hover-background-color-light: #0056b3; 
   --button-hover-background-color-dark: #000033; 
 
-  --background-light: #ffffff; /* White */
+  --background-color-light: #ffffff; /* White */
   --primary-light: #007bff; /* Royal Blue */
   --text-light: #000000; /* Black text */
 
-  --background-dark: #000000; /* Black */
+  --background-color-dark: #000000; /* Black */
   --primary-dark: #000080; /* Navy Blue */
   --text-dark: #ffffff; /* White text */
 }
 
 body[data-theme="light"] {
-  --background-color: var(--background-light);
+  --background-color: var(--background-color-light);
   --primary-color: var(--primary-light);
   --text-color: var(--text-light);
   --button-background-color: var(--button-background-color-light);
@@ -22,7 +22,7 @@ body[data-theme="light"] {
 }
 
 body[data-theme="dark"] {
-  --background-color: var(--background-dark);
+  --background-color: var(--background-color-dark);
   --primary-color: var(--primary-dark);
   --text-color: var(--text-dark);
   --button-background-color: var(--button-background-color-dark);
@@ -40,7 +40,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Add this to make sure button and links also respect the theme */
+/*ensuring button and links also respect the theme */
 button, .links a {
   color: var(--text-color);
 }
