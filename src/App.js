@@ -1,5 +1,6 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { ThemeProvider, useTheme } from './components/context/ThemeContext'; // Adjust the path as necessary
 import Navbar from './components/Navbar/Navbar';
 import About from './components/About/About';
 import Work from './components/Work';
@@ -10,9 +11,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
+  const { theme, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme);
+  }, [theme]);
+
   return (
     <Router>
-      <Navbar />
+      <Navbar toggleTheme={toggleTheme} />
       <Routes>
         <Route path="/" element={<Navigate replace to="/about" />} /> {/* Redirect to About */}
         <Route path="/about" element={<About />} />
@@ -25,4 +32,5 @@ function App() {
   );
 }
 
+// Wrap App component with ThemeProvider in index.js or use another wrapper here if necessary
 export default App;

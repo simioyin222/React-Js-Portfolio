@@ -1,6 +1,6 @@
 .navbar {
-  background: #007bff;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--text-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,12 +8,12 @@
 }
 
 .links a {
-  color: #fff;
+  color: var(--text-color);
   margin-left: 20px;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .links a:hover {
-  color: #ffdd57;
+  color: var(--background-color); /* Choose an appropriate hover color from your theme variables */
 }

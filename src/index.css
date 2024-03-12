@@ -1,4 +1,28 @@
+:root {
+  --background-light: #ffffff; /* White */
+  --primary-light: #007bff; /* Royal Blue */
+  --text-light: #000000; /* Black text */
+
+  --background-dark: #000000; /* Black */
+  --primary-dark: #000080; /* Navy Blue */
+  --text-dark: #ffffff; /* White text */
+}
+
+[data-theme="light"] {
+  --background-color: var(--background-light);
+  --primary-color: var(--primary-light);
+  --text-color: var(--text-light);
+}
+
+[data-theme="dark"] {
+  --background-color: var(--background-dark);
+  --primary-color: var(--primary-dark);
+  --text-color: var(--text-dark);
+}
+
 body {
+  background-color: var(--background-color);
+  color: var(--text-color);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -7,7 +31,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Add this to make sure button and links also respect the theme */
+button, .links a {
+  color: var(--text-color);
+}
+
+button:hover {
+  background-color: var(--primary-color);
 }

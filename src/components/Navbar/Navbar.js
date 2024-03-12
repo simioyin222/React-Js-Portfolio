@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './navbar.module.css';
+import { useTheme } from '../context/ThemeContext';
 
-function Navbar() {
+const Navbar = () => {
+  const { toggleTheme } = useTheme();
+
   return (
     <nav className={styles.navbar}>
       <h1>Simi Portfolio</h1>
@@ -12,6 +15,7 @@ function Navbar() {
         <Link to="/projects">Projects</Link>
         <Link to="/interests">Interests</Link>
         <Link to="/contact">Contact</Link>
+        <button onClick={toggleTheme}>Toggle Theme</button>
       </div>
     </nav>
   );

@@ -4,14 +4,15 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7); /* This might remain constant due to its purpose */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .modal {
-  background-color: white;
+  background-color: var(--background-color);
+  color: var(--text-color);
   padding: 20px;
   border-radius: 8px;
   width: 50%;
@@ -26,4 +27,5 @@
   border: none;
   font-size: 20px;
   cursor: pointer;
+  color: var(--text-color); /* Ensure close button text color matches the theme */
 }
