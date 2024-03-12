@@ -4,16 +4,33 @@ import { useSpring, animated } from 'react-spring';
 
 function About() {
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+
+  // Example skills data
+  const skills = [
+    { name: 'JavaScript', level: '80%' },
+    { name: 'React', level: '70%' },
+    { name: 'CSS', level: '85%' },
+    // Add more skills as needed
+  ];
+
   return (
     <animated.div style={props} className={styles.aboutSection}>
       <h2>About Me</h2>
-      <p>My name is <em>Similoluwa Oyinkolade</em>, but people usually call me
-        Simi. What's really important to know about me is that I moved to
-        Chicago not too long ago and I'm loving it so far! I'm a full-time
-        streamer and content creator and I enjoy a lot of other things within
-        those ranges as well. Currently, I'm working towards becoming a software
-        engineer/video game developer. My time at Epicodus has been good so far
-        and I'm hopeful for more positive experiences on this long road ahead.</p>
+      <div className={styles.profilePicContainer}>
+        <img src="path/to/your/image.jpg" alt="Similoluwa Oyinkolade" className={styles.profilePic} />
+      </div>
+      <p>My name is <em>Similoluwa Oyinkolade</em>, but people usually call me Simi...</p>
+      <div className={styles.skills}>
+        <h3>Skills</h3>
+        {skills.map((skill, index) => (
+          <div key={index} className={styles.skill}>
+            <div className={styles.skillName}>{skill.name}</div>
+            <div className={styles.skillBar}>
+              <div className={styles.skillLevel} style={{ width: skill.level }}></div>
+            </div>
+          </div>
+        ))}
+      </div>
     </animated.div>
   );
 }

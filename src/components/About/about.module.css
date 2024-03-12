@@ -1,8 +1,46 @@
 .aboutSection {
-  background: var(--primary-color); /* Adjusted to use primary color variable */
+  background: var(--primary-color);
   color: var(--text-color);
   padding: 20px;
   margin: 20px 0;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.profilePicContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profilePic {
+  border-radius: 50%; /* Circular picture */
+  width: 150px; /* Adjust based on your preference */
+  height: 150px; /* Adjust to maintain aspect ratio */
+}
+
+.skills {
+  margin-top: 20px;
+}
+
+.skill {
+  margin-bottom: 10px;
+}
+
+.skillName {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.skillBar {
+  background-color: #654848;
+  height: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skillLevel {
+  background-color: var(--text-color); /* Use a variable or specific color */
+  height: 100%;
+  border-radius: 5px;
 }
