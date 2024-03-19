@@ -1,26 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { marked } from 'marked';  // new way to do marked
 
 function Work() {
-  return (
-    <div>
-      <h3>Work Experience/Background</h3>
-      <p>
-        <a href="https://www.linkedin.com/in/simioyin/">LinkedIn for my details</a>
-      </p>
-      <p>
-        In the above link, you can find out more about me. I came to Epicodus in
-        order to further my programming learning and to become a video game
-        developer.
-      </p>
-      <ol>
-        <li>
-          Student Software Engineer-Streamer-Video Games: TobiLLC · Full-time
-        </li>
-        <li>Sales Development Representative: Grubhub · Full-time</li>
-        <li>Store Manager: Gamestop · Full Time</li>
-      </ol>
-    </div>
-  );
+    const [resumeHtml, setResumeHtml] = useState('');
+
+    useEffect(() => {
+        fetch('/resume.md')
+            .then(response => response.text())
+            .then(text => setResumeHtml(marked.parse(text))); // Use marked.parse() to convert Markdown to HTML
+    }, []);
+
+    return (
+        <div>
+            <h3>Work Experience/Background</h3>
+            <div dangerouslySetInnerHTML={{ __html: resumeHtml }} />
+        </div>
+    );
 }
 
 export default Work;
