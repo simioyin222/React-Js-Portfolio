@@ -17,7 +17,7 @@ function About() {
     <animated.div style={props} className={styles.aboutSection}>
       <h2>About Me</h2>
       <div className={styles.profilePicContainer}>
-        <img src="../../img/IMG_3456.JPG" alt="Similoluwa Oyinkolade"/>
+      <img src="../../img/IMG_3456.JPG" alt="Similoluwa Oyinkolade" className={styles.profilePic}/> 
       </div>
       <p>My name is <em>Similoluwa Oyinkolade</em>, but people usually call me Simi...</p>
       <div className={styles.skills}>
