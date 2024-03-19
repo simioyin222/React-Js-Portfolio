@@ -11,8 +11,9 @@ function Blog() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    client.getEntries({ content_type: 'portfolioblog' }) // Make sure the content_type matches your Contentful setup
+    client.getEntries({ content_type: 'portfolioblog' })
       .then((response) => {
+        console.log('Fetched posts:', response.items);
         setPosts(response.items.map(item => item.fields));
       })
       .catch(console.error);
@@ -20,6 +21,7 @@ function Blog() {
 
   return (
     <div>
+      <h1>Blog Posts</h1>
       {posts.map((post, index) => (
         <article key={index}>
           <h2>{post.title}</h2>
