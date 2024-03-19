@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { marked } from 'marked';  // new way to do marked
+import { marked } from 'marked';
 
 function Work() {
     const [resumeHtml, setResumeHtml] = useState('');
@@ -7,13 +7,13 @@ function Work() {
     useEffect(() => {
         fetch('/resume.md')
             .then(response => response.text())
-            .then(text => setResumeHtml(marked.parse(text))); // Use marked.parse() to convert Markdown to HTML
+            .then(text => setResumeHtml(marked.parse(text)));
     }, []);
 
     return (
         <div>
-            <h3>Resume</h3>
-            <div dangerouslySetInnerHTML={{ __html: resumeHtml }} />
+            <h3 className="resume-heading">Resume</h3>
+            <div className="resume-content" dangerouslySetInnerHTML={{ __html: resumeHtml }} />
         </div>
     );
 }
