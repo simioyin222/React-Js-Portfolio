@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { ThemeProvider, useTheme } from './components/context/ThemeContext'; // Adjust the path as necessary
+import { ThemeProvider, useTheme } from './components/context/ThemeContext'; 
 import Navbar from './components/Navbar/Navbar';
 import About from './components/About/About';
 import Work from './components/Work';
 import Projects from './components/Projects';
 import Interests from './components/Interests';
-import ContactForm from './components/ContactForm'; // Ensure this path is correct
+import Blog from './components/Blog/Blog';
+import ContactForm from './components/ContactForm'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -21,7 +22,8 @@ function App() {
     <Router>
       <Navbar toggleTheme={toggleTheme} />
       <Routes>
-        <Route path="/" element={<Navigate replace to="/about" />} /> {/* Redirect to About */}
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/" element={<Navigate replace to="/about" />} />
         <Route path="/about" element={<About />} />
         <Route path="/work" element={<Work />} />
         <Route path="/projects" element={<Projects />} />
@@ -32,5 +34,4 @@ function App() {
   );
 }
 
-// Wrap App component with ThemeProvider in index.js or use another wrapper here if necessary
 export default App;
