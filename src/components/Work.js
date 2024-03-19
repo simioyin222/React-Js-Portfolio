@@ -12,7 +12,7 @@ function Work() {
 
     return (
         <div>
-            <h3>Work Experience/Background</h3>
+            <h3>Resume</h3>
             <div dangerouslySetInnerHTML={{ __html: resumeHtml }} />
         </div>
     );
