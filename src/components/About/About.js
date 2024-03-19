@@ -30,7 +30,8 @@ function About() {
       </div>
       <div className={styles.aboutText}>
         <h2>About Me</h2>
-        <p>My name is <em>Similoluwa Oyinkolade</em>, but people usually call me Simi...</p>
+        <p className="intro-text">
+  <em>Simi</em> here - from tech sales to Frontend Engineer & UI/UX Designer fueled by a love for tech, gaming, and animations. Skilled in HTML, CSS, JavaScript, React, with a knack for crafting intuitive, engaging user experiences. My journey through Epicodus honed my coding skills, blending creativity with tech to design solutions that resonate. Passionate about collaboration and innovation, I'm driven to create impactful digital experiences.</p>
       </div>
     </animated.div>
   );
