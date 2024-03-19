@@ -16,6 +16,7 @@ const Navbar = () => {
         <Link to="/interests">Interests</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/blog">Blog</Link>
+        <Link to="/testimonials">Testimonials</Link>
         <button onClick={toggleTheme}>Toggle Theme</button>
       </div>
     </nav>

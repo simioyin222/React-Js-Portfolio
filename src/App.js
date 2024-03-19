@@ -6,6 +6,7 @@ import About from './components/About/About';
 import Work from './components/Work';
 import Projects from './components/Projects';
 import Interests from './components/Interests';
+import Testimonials from './components/Testimonials/Testimonials';
 import Blog from './components/Blog/Blog';
 import ContactForm from './components/ContactForm'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,6 +24,7 @@ function App() {
       <Navbar toggleTheme={toggleTheme} />
       <Routes>
         <Route path="/blog" element={<Blog />} />
+        <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/" element={<Navigate replace to="/about" />} />
         <Route path="/about" element={<About />} />
         <Route path="/work" element={<Work />} />
