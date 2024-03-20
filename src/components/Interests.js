@@ -1,64 +1,51 @@
 import React, { useState } from 'react';
+import Modal from './modal'; // Import the Modal component
 import styles from './interests.module.css';
 
 function Interests() {
   const [selectedInterest, setSelectedInterest] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const interests = [
-    { name: 'MMA/UFC', content: 'Content about MMA/UFC' },
-    { name: 'Video Games', content: 'Content about Video Games' },
-    { name: 'Working Out', content: 'Content about Working Out' },
-    { name: 'Anime', content: 'Content about Anime' },
-    { name: 'Streaming', content: 'Check out my streaming channel!', url: 'https://www.twitch.tv/tobbdawgg' },
+    { name: 'MMA/UFC', content: 'Content about MMA/UFC', images: ['mma1.jpg', 'mma2.jpg'] },
+    { name: 'MMA/UFC', content: 'Content about MMA/UFC', images: ['mma1.jpg', 'mma2.jpg'] },
+    { name: 'MMA/UFC', content: 'Content about MMA/UFC', images: ['mma1.jpg', 'mma2.jpg'] },
+    { name: 'MMA/UFC', content: 'Content about MMA/UFC', images: ['mma1.jpg', 'mma2.jpg'] },
+    { name: 'MMA/UFC', content: 'Content about MMA/UFC', images: ['mma1.jpg', 'mma2.jpg'] },
+    // Add more interests
   ];
 
   const handleClick = (interest) => {
     setSelectedInterest(interest);
-  };
-
-  const getBubblePosition = (index) => {
-    // Define positions for a narrower and lower "W" shape layout
-    const positions = [
-      { top: '30%', left: '20%' }, // Start of the "W"
-      { top: '60%', left: '35%' },
-      { top: '30%', left: '50%' },
-      { top: '60%', left: '65%' },
-      { top: '30%', left: '80%' }  // End of the "W"
-    ];
-  
-    return positions[index % positions.length];
+    setShowModal(true);
   };
 
   return (
-    <div className={styles.container}>
+    <div>
       <h4>Interests and Hobbies</h4>
       <div className={styles.bubblesContainer}>
-        {interests.map((interest, index) => {
-          const position = getBubblePosition(index);
-          return (
-            <div
-              key={index}
-              className={styles.bubble}
-              onClick={() => handleClick(interest)}
-              style={{
-                animationDelay: `${index * 2}s`,
-                top: position.top,
-                left: position.left,
-              }}
-            >
-              {interest.name}
-            </div>
-          );
-        })}
+        {interests.map((interest, index) => (
+          <div
+            key={index}
+            className={styles.bubble}
+            onClick={() => handleClick(interest)}
+          >
+            {interest.name}
+          </div>
+        ))}
       </div>
 
-      {selectedInterest && (
-        <div className={styles.detailView}>
-          <h5>{selectedInterest.name}</h5>
-          <p>{selectedInterest.content}</p>
-          {selectedInterest.url && <a href={selectedInterest.url} target="_blank" rel="noopener noreferrer">Visit</a>}
-        </div>
-      )}
+      <Modal show={showModal} onClose={() => setShowModal(false)}>
+        {selectedInterest && (
+          <div>
+            <h5>{selectedInterest.name}</h5>
+            <p>{selectedInterest.content}</p>
+            {selectedInterest.images && selectedInterest.images.map((image, index) => (
+              <img key={index} src={image} alt={selectedInterest.name} />
+            ))}
+          </div>
+        )}
+      </Modal>
     </div>
   );
 }

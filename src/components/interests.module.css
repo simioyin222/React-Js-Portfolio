@@ -1,14 +1,23 @@
 .bubble {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #007bff;
+  width: 350px; /* Increase the size */
+  height: 350px; /* Increase the size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  line-height: 100px;
+  border-radius: 50%;
+  background-color: skyblue;
   color: white;
   cursor: pointer;
-  transition: transform 0.2s;
-  user-select: none;
+  animation: float 6s ease-in-out infinite;
+  /* Other styles */
+}
+
+.bubblesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center bubbles horizontally */
+  gap: 20px; /* Space between bubbles */
 }
 
 .container {
@@ -27,8 +36,20 @@
 }
 
 .bubble {
-  position: absolute;
+  flex: 0 1 auto; /* Allow bubbles to grow and shrink as needed */
+  margin: 10px;
   animation: float 6s ease-in-out infinite;
   cursor: pointer;
-  user-select: none;
+}
+
+.bubble:nth-child(1), .bubble:nth-child(5) {
+  align-self: flex-start;
+}
+
+.bubble:nth-child(2), .bubble:nth-child(4) {
+  align-self: center;
+}
+
+.bubble:nth-child(3) {
+  align-self: flex-end;
 }
