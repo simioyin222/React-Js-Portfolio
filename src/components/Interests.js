@@ -16,24 +16,40 @@ function Interests() {
     setSelectedInterest(interest);
   };
 
+  const getBubblePosition = (index) => {
+    // Define positions for a narrower and lower "W" shape layout
+    const positions = [
+      { top: '30%', left: '20%' }, // Start of the "W"
+      { top: '60%', left: '35%' },
+      { top: '30%', left: '50%' },
+      { top: '60%', left: '65%' },
+      { top: '30%', left: '80%' }  // End of the "W"
+    ];
+  
+    return positions[index % positions.length];
+  };
+
   return (
     <div className={styles.container}>
       <h4>Interests and Hobbies</h4>
       <div className={styles.bubblesContainer}>
-        {interests.map((interest, index) => (
-          <div
-            key={index}
-            className={styles.bubble}
-            onClick={() => handleClick(interest)}
-            style={{
-              animationDelay: `${index * 2}s`, // to create staggered animation effect
-              top: `${10 + index * 15}%`, // to scatter the bubbles vertically
-              left: `${(index % 3) * 30 + 10}%`, // to scatter the bubbles horizontally
-            }}
-          >
-            {interest.name}
-          </div>
-        ))}
+        {interests.map((interest, index) => {
+          const position = getBubblePosition(index);
+          return (
+            <div
+              key={index}
+              className={styles.bubble}
+              onClick={() => handleClick(interest)}
+              style={{
+                animationDelay: `${index * 2}s`,
+                top: position.top,
+                left: position.left,
+              }}
+            >
+              {interest.name}
+            </div>
+          );
+        })}
       </div>
 
       {selectedInterest && (
