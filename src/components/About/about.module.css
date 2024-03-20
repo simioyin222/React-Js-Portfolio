@@ -1,7 +1,6 @@
 .aboutSection {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: center; /* Vertically align items */
   background: var(--primary-color);
   color: var(--text-color);
   padding: 20px;
@@ -11,33 +10,29 @@
 }
 
 .profilePicContainer {
-  margin-bottom: 20px; /* Space between image and about text */
+  flex: 0 0 auto; /* Do not grow or shrink */
+  margin-right: 20px; /* Space between image and text */
 }
 
 .profilePic {
-  width: 200px;
+  width: 200px; /* Adjust size as needed */
   height: auto;
   border-radius: 50%;
 }
 
 .aboutText {
-  text-align: center;
-  margin-bottom: 20px; /* Space between about text and skills */
+  flex: 1; /* Take remaining space */
 }
 
 .skillsContainer {
-  width: 100%;
-}
-
-.skillsRow {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  justify-content: space-around;
 }
 
 .skill {
-  width: calc(50% - 10px); /* Adjust width to fit two skills per row, accounting for margin */
-  margin: 5px; /* Space around each skill */
+  margin-bottom: 10px;
+  width: 48%; /* Adjust width for two columns */
 }
 
 .skillName {
