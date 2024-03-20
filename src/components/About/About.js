@@ -6,19 +6,24 @@ function About() {
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
   const skills = [
-    { name: 'JavaScript', level: '80%' },
-    { name: 'React', level: '70%' },
-    { name: 'CSS', level: '85%' },
-    { name: 'HMTL5', level: '85%' },
-    { name: 'User Engagement', level: '85%' },
-    { name: 'Creative Design', level: '85%' },
-    { name: 'Adobe', level: '85%' },
-    { name: 'Canva', level: '85%' },
-    { name: 'Figma', level: '85%' },
-    { name: 'Angular', level: '85%' },
-    { name: 'Full Stack', level: '85%' },
-    { name: 'CSS', level: '85%' },
-    { name: 'CSS', level: '85%' },
+    { name: 'JavaScript', level: '100%' },
+    { name: 'React', level: '100%' },
+    { name: 'CSS', level: '100%' },
+    { name: 'HMTL5', level: '100%' },
+    { name: 'User Engagement', level: '50%' },
+    { name: 'Creative Design', level: '75%' },
+    { name: 'Adobe', level: '80%' },
+    { name: 'Canva', level: '80%' },
+    { name: 'Figma', level: '20%' },
+    { name: 'Angular', level: '50%' },
+    { name: 'Full Stack', level: '100%' },
+    { name: 'Typescript', level: '50' },
+    { name: 'Bootstrap', level: '65%' },
+    { name: 'Unit Testing', level: '80%' },
+    { name: 'Bootstrap', level: '85%' },
+    { name: 'Communication', level: '100%' },
+    { name: 'Team Work', level: '100%' },
+    { name: 'Front-End', level: '95%' },
     // Add more skills as needed
   ];
 
