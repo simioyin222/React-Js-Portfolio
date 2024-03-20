@@ -1,62 +1,54 @@
 import React, { useState } from 'react';
-import Slider from 'react-slick';
-import Modal from './Modal/Modal'; // Adjust the path as necessary
+import Modal from './Modal/Modal'; // Ensure the path is correct
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import styles from './Projects.module.css'; // Ensure you have this CSS file for styling
 
 function Projects() {
   const [projects] = useState([
-    // Assume each project now has an array of image URLs for the carousel
     {
       name: 'DailyLife',
       description: 'HTML and CSS practice project from my first week at Epicodus.',
       link: 'https://github.com/simioyin222/DailyLife',
-      images: ['image1.jpg', 'image2.jpg'], // Add your image URLs here
+      thumbnail: 'thumbnail1.jpg', // Assume you have thumbnail images for each project
     },
     {
       name: 'Simi-Portfolio1',
       description: 'Current real-time portfolio project using HTML and CSS.',
       link: 'https://github.com/simioyin222/SIMI-PORTFOLIO1',
-      images: ['image3.jpg', 'image4.jpg'], // Add your image URLs here
+      thumbnail: 'thumbnail2.jpg',
     }
+    // Add more projects as needed
   ]);
+
+  // You can still keep the modal logic if you want to show detailed info on click
   const [modalOpen, setModalOpen] = useState(false);
   const [currentProject, setCurrentProject] = useState({});
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-
-  const openModal = (project) => {
+  const handleClick = (project) => {
     setCurrentProject(project);
-    setModalOpen(true);
+    setModalOpen(true); // Or directly navigate to the project.link
   };
 
   return (
-    <div>
+    <div className={styles.projectsContainer}>
       <h3>Projects</h3>
-      <ul>
+      <div className={styles.gridContainer}>
         {projects.map((project, index) => (
-          <li key={index} onClick={() => openModal(project)}>
-            {project.name}
-          </li>
+          <div key={index} className={styles.projectThumbnail} onClick={() => handleClick(project)}>
+            <img src={project.thumbnail} alt={project.name} className={styles.thumbnailImage} />
+            <div className={styles.thumbnailOverlay}>
+              <div className={styles.projectTitle}>{project.name}</div>
+              {/* Add more details in overlay or a button to view more */}
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
       <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
         <h2>{currentProject.name}</h2>
         <p>{currentProject.description}</p>
         <a href={currentProject.link} target="_blank" rel="noopener noreferrer">View Project</a>
-        <Slider {...settings}>
-          {currentProject.images && currentProject.images.map((img, index) => (
-            <div key={index}>
-              <img src={img} alt="Project" style={{ width: '100%' }} />
-            </div>
-          ))}
-        </Slider>
+        {/* Keep or remove the Slider depending on your design choice */}
       </Modal>
     </div>
   );
