@@ -1,6 +1,7 @@
 .aboutSection {
   display: flex;
-  align-items: flex-start; /* Align at the top */
+  flex-direction: column;
+  align-items: center;
   background: var(--primary-color);
   color: var(--text-color);
   padding: 20px;
@@ -10,39 +11,34 @@
 }
 
 .profilePicContainer {
-  display: flex;
-  flex-direction: column; /* Stack image and skills vertically */
-  align-items: center;
-  margin-right: 20px;
+  margin-bottom: 20px; /* Space between image and about text */
 }
 
 .profilePic {
   width: 200px;
   height: auto;
   border-radius: 50%;
-  margin-bottom: 20px; /* Space between image and skills */
 }
 
 .aboutText {
-  flex: 1;
+  text-align: center;
+  margin-bottom: 20px; /* Space between about text and skills */
 }
 
 .skillsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Adjust as necessary to align items */
-}
-
-
-.skills {
   width: 100%;
 }
 
-.skill {
-  width: 48%; /* Adjust width to fit two skills per row */
-  margin-bottom: 10px;
+.skillsRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
+.skill {
+  width: calc(50% - 10px); /* Adjust width to fit two skills per row, accounting for margin */
+  margin: 5px; /* Space around each skill */
+}
 
 .skillName {
   font-weight: bold;
@@ -57,21 +53,7 @@
 }
 
 .skillLevel {
-  background-color: var(--text-color); /* Use a variable or specific color */
+  background-color: var(--text-color);
   height: 100%;
   border-radius: 5px;
-}
-
-.skillsColumn:last-child {
-  margin-right: 0;
-}
-
-.skillsColumn {
-  flex: 1; /* Each column takes equal width */
-  margin-right: 20px; /* Add some space between columns */
-}
-
-.skillsRow {
-  display: flex;
-  justify-content: space-between;
 }
