@@ -27,13 +27,22 @@
   flex: 1;
 }
 
+.skillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adjust as necessary to align items */
+}
+
+
 .skills {
   width: 100%;
 }
 
 .skill {
+  width: 48%; /* Adjust width to fit two skills per row */
   margin-bottom: 10px;
 }
+
 
 .skillName {
   font-weight: bold;
@@ -51,4 +60,18 @@
   background-color: var(--text-color); /* Use a variable or specific color */
   height: 100%;
   border-radius: 5px;
+}
+
+.skillsColumn:last-child {
+  margin-right: 0;
+}
+
+.skillsColumn {
+  flex: 1; /* Each column takes equal width */
+  margin-right: 20px; /* Add some space between columns */
+}
+
+.skillsRow {
+  display: flex;
+  justify-content: space-between;
 }
