@@ -34,7 +34,7 @@ function About() {
       </div>
       <div className={styles.aboutText}>
         <h2>About Me</h2>
-        <p>My name is <em>Similoluwa Oyinkolade</em> I'm a junior software engineer transitioning from tech sales to programming, with a passion for technology and video games fueling my journey. Experienced in full-stack development, frontend development, ui/ux and more, I excel in collaborative environments, driving projects with effective communication and innovative solutions. Having graduated from a software engineering bootcamp, I'm eager to contribute to and grow within coding and programming teams, where my love for building apps and solving problems thrives.</p>
+        <p className={`${styles.introText} ${styles.aboutParagraph}`}>My name is <em>Similoluwa Oyinkolade</em> I'm a junior software engineer transitioning from tech sales to programming, with a passion for technology and video games fueling my journey. Experienced in full-stack development, frontend development, ui/ux and more, I excel in collaborative environments, driving projects with effective communication and innovative solutions. Having graduated from a software engineering bootcamp, I'm eager to contribute to and grow within coding and programming teams, where my love for building apps and solving problems thrives.</p>
         <div className={styles.skillsContainer}>
           {skills.map((skill, index) => (
             <div key={index} className={styles.skill}>

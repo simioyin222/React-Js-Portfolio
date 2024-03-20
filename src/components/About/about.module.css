@@ -24,6 +24,10 @@
   flex: 1; /* Take remaining space */
 }
 
+.aboutParagraph {
+  font-size: 1.7rem; /* Adjust the font size as needed */
+}
+
 .skillsContainer {
   display: flex;
   justify-content: space-between;
