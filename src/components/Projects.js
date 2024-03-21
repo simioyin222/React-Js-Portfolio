@@ -10,7 +10,7 @@ function Projects() {
       name: 'DailyLife',
       description: 'HTML and CSS practice project from my first week at Epicodus.',
       link: 'https://github.com/simioyin222/DailyLife',
-      thumbnail: 'thumbnail1.jpg', // Assume you have thumbnail images for each project
+      thumbnail: process.env.PUBLIC_URL + '/img/IMG_3456.JPG', // Using process.env.PUBLIC_URL to get the correct path
     },
     {
       name: 'Simi-Portfolio1',
