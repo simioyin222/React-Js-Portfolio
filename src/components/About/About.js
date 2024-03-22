@@ -1,24 +1,19 @@
 import React from 'react';
 import styles from './about.module.css';
-import { useSpring, animated } from 'react-spring';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faJsSquare, faReact, faCss3Alt, faHtml5, faAdobe, faCanva, faFigma, faAngular, faBootstrap} from '@fortawesome/free-brands-svg-icons';
 
 function About() {
-  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
-
   const skills = [
-    { name: 'JavaScript', level: '100%' },
-    { name: 'React', level: '100%' },
-    { name: 'CSS', level: '100%' },
-    { name: 'HMTL5', level: '100%' },
-    { name: 'User Engagement', level: '50%' },
-    { name: 'Creative Design', level: '75%' },
-    { name: 'Adobe', level: '80%' },
-    { name: 'Canva', level: '80%' },
-    { name: 'Figma', level: '20%' },
-    { name: 'Angular', level: '50%' },
+      { name: 'JavaScript', icon: faJsSquare },
+      { name: 'React', icon: faReact },
+      { name: 'CSS', icon: faCss3Alt },
+  { name: 'HTML5', icon: faHtml5 },
+    { name: 'Figma', icon: faFigma },
+    { name: 'Angular', icon: faAngular },
+    { name: 'Bootstrap', icon: faBootstrap },
     { name: 'Full Stack', level: '100%' },
     { name: 'Typescript', level: '50' },
-    { name: 'Bootstrap', level: '65%' },
     { name: 'Unit Testing', level: '80%' },
     { name: 'Bootstrap', level: '85%' },
     { name: 'Communication', level: '100%' },
@@ -28,7 +23,7 @@ function About() {
   ];
 
   return (
-    <animated.div style={props} className={styles.aboutSection}>
+    <div className={styles.aboutSection}>
       <div className={styles.profilePicContainer}>
         <img src="/img/IMG_3456.JPG" alt="Similoluwa Oyinkolade" className={styles.profilePic}/>
       </div>
@@ -38,15 +33,13 @@ function About() {
         <div className={styles.skillsContainer}>
           {skills.map((skill, index) => (
             <div key={index} className={styles.skill}>
-              <div className={styles.skillName}>{skill.name}</div>
-              <div className={styles.skillBar}>
-                <div className={styles.skillLevel} style={{ width: skill.level }}></div>
-              </div>
+              <FontAwesomeIcon icon={skill.icon} size="2x" />
+                        <div className={styles.skillName}>{skill.name}</div>
             </div>
           ))}
         </div>
       </div>
-    </animated.div>
+      </div>
   );
 }
 
